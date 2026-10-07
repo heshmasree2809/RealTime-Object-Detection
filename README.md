@@ -1,70 +1,174 @@
-# Real-Time-Object-Detection-API-using-TensorFlow
-A <b>Transfer Learning</b> based <b>Object Detection API</b> that detects all objects in an image, video or live webcam. An <b>SSD</b> model and a <b>Faster R-CNN</b> model was pretrained on <b>Mobile Net COCO</b> dataset along with a label map in <b>Tensorflow</b>. These models were used to detect objects captured in an image, video or real time webcam. <b>OpenCV</b> was used for streaming objects and preprocessing.
+# Real-Time Object Detection API using TensorFlow
 
-# Screenshots
-## Object Detection output for image using SSD
-<img src="https://github.com/kaushikjadhav01/Real-Time-Object-Detection-API-using-TensorFlow/blob/master/screenshots/output_image_ssd.png">
+A **Transfer Learning-based Object Detection system** that detects multiple objects from **images, video files, and real-time webcam streams** using pretrained **SSD** and **Faster R-CNN** models with **TensorFlow** and **OpenCV**.
 
-## Object Detection output for video files using SSD
-<img src="https://github.com/kaushikjadhav01/Real-Time-Object-Detection-API-using-TensorFlow/blob/master/screenshots/output_ssd_video1.PNG">
-<img src="https://github.com/kaushikjadhav01/Real-Time-Object-Detection-API-using-TensorFlow/blob/master/screenshots/output_ssd_video2.PNG">
+## 🚀 Features
 
-## Object Detection output for webcam using SSD
-<img src="https://github.com/kaushikjadhav01/Real-Time-Object-Detection-API-using-TensorFlow/blob/master/screenshots/output_ssd_webcam.PNG">
+* 🖼️ Object detection from images
+* 🎥 Object detection from video files
+* 📷 Real-time webcam object detection
+* 🧠 SSD-based object detection
+* 🔍 Faster R-CNN-based object detection
+* 🔄 Transfer learning using pretrained models
+* 🏷️ COCO dataset label mapping
+* ⚡ Real-time video processing with OpenCV
 
-## Object Detection output for image using Faster R-CNN
-<img src="https://github.com/kaushikjadhav01/Real-Time-Object-Detection-API-using-TensorFlow/blob/master/screenshots/output_image_rcnn.png">
+## 🧠 Models Used
 
-## Object Detection output for video files using Faster R-CNN
-<img src="https://github.com/kaushikjadhav01/Real-Time-Object-Detection-API-using-TensorFlow/blob/master/screenshots/output_rcnn_video1.PNG">
-<img src="https://github.com/kaushikjadhav01/Real-Time-Object-Detection-API-using-TensorFlow/blob/master/screenshots/output_rcnn_video2.PNG">
+### SSD — Single Shot Detector
 
-## Object Detection output for webcam using Faster R-CNN
-<img src="https://github.com/kaushikjadhav01/Real-Time-Object-Detection-API-using-TensorFlow/blob/master/screenshots/output_rcnn_webcam.PNG">
+SSD performs object detection in a single forward pass, making it suitable for applications where detection speed is important.
 
-# Technical Concepts
-<b>Faster RCNN</b> is an object detection architecture presented by Ross Girshick, Shaoqing Ren, Kaiming He and Jian Sun in 2015, and is one of the famous object detection architectures that uses convolution neural networks like YOLO (You Look Only Once) and SSD ( Single Shot Detector).<br>
-More information can be found <a href="https://towardsdatascience.com/faster-rcnn-object-detection-f865e5ed7fc4">here</a>
-<br>
-<br>
-<b>Single Shot Detector (SSD)</b> like YOLO takes only one shot to detect multiple objects present in an image using multibox.
-It is significantly faster in speed and high-accuracy object detection algorithm.<br>
-More information can be found <a href="https://towardsdatascience.com/ssd-single-shot-detector-for-object-detection-using-multibox-1818603644ca">here</a>
-<br>
-<br>
-<b>Label Maps:</b>  Cartographic labeling is the craft of placing text on a map in relation to the map symbols, together representing features and properties of the real world. Using text effectively creates maps that are clear, informative, and attractive. TensorFlow requires a label map, which namely maps each of the used labels to an integer values. This label map is used both by the training and detection processes.<br>
-More information can be found <a href="https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html">here</a>
-<br>
-<br>
-<b>An Inference Graph</b> is a propositional graph in which certain arcs and certain reverse arcs are augmented with channels through which information can flow – meaning the inference graph is both a representation of knowledge and the method for performing inference upon it. Channels come in two forms. The first type, i-channels, are added to the reverse antecedent arcs – named as such since they carry messages reporting that “I am true” or “I am negated” from the antecedent node to the rule node. Channels are also added to the consequent arcs, called u-channels, since they carry messages to the consequents which report that “you are true” or “you are negated.” Rules are connected by shared subexpressions.<br>
-More information can be found <a href="http://www.cogsys.org/papers/2013poster15.pdf">here</a>
-<br>
-<br>
-<b>Protocol Buffers (Protobuf)</b> is a method of serializing structured data. It is useful in developing programs to communicate with each other over a wire or for storing data. The method involves an interface description language that describes the structure of some data and a program that generates source code from that description for generating or parsing a stream of bytes that represents the structured data.<br>
-More information can be found <a href="http://www.cogsys.org/papers/2013poster15.pdf">here</a>
+### Faster R-CNN
 
-# Technologies Used
-<ul>
-<li><a href="https://www.tensorflow.org/">TensorFlow</a></li>
-<li><a href="https://keras.io/">Keras</a></li>
-<li><a href="https://opencv.org/">OpenCV</a></li>
-<li><a href="https://play.google.com/store/apps/details?id=com.pas.webcam&hl=en_IN">IPWebcam</a></li>
-<li><a href="https://www.python.org/">Python</a></li>
-</ul>
+Faster R-CNN uses a Region Proposal Network to identify potential object regions before performing classification and bounding-box regression. It generally provides strong detection accuracy while requiring more computation than SSD.
 
-# How to Install & Use
-<ol>
-<li>Install <b>TensorFlow API</b> by following the instructions <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md">here</a></li>
-<li>Download my repo and place the jupyter notebooks of my repo in models/research/object_detection folder of the Tensorflow API</li>
-<li>To use smartphone camera in place of laptop webcam, install <b>IPWebcam</b> app on your smartphone from app store. Open app and click on <b>Start Server</b></li>
-<li>Replace the IP address in my jupyter notebooks with IP address in app on Smartphone and run the notebooks</li>
-</ol>
+### MobileNet
 
-# Authors
-## Kaushik Jadhav
-<ul>
-<li>Github:https://github.com/kaushikjadhav01</li>
-<li>Medium:https://medium.com/@kaushikjadhav01</li>
-<li>LinkedIn:https://www.linkedin.com/in/kaushikjadhav01/</li>
-<li>Portfolio:http://kaushikjadhav01.github.io/</li>
-</ul>
+MobileNet is used as a lightweight feature-extraction backbone, making the detection pipeline suitable for real-time applications.
+
+## 🛠️ Technologies Used
+
+* **Python**
+* **TensorFlow**
+* **Keras**
+* **OpenCV**
+* **Jupyter Notebook**
+* **COCO Dataset**
+* **TensorFlow Object Detection API**
+
+## 📂 Detection Sources
+
+| Input  | SSD | Faster R-CNN |
+| ------ | :-: | :----------: |
+| Image  |  ✅  |       ✅      |
+| Video  |  ✅  |       ✅      |
+| Webcam |  ✅  |       ✅      |
+
+## 📸 Results
+
+### SSD — Image Detection
+
+Add your SSD image detection screenshot here.
+
+### SSD — Video Detection
+
+Add your SSD video detection screenshots here.
+
+### SSD — Webcam Detection
+
+Add your SSD webcam detection screenshot here.
+
+### Faster R-CNN — Image Detection
+
+Add your Faster R-CNN image detection screenshot here.
+
+### Faster R-CNN — Video Detection
+
+Add your Faster R-CNN video detection screenshots here.
+
+### Faster R-CNN — Webcam Detection
+
+Add your Faster R-CNN webcam detection screenshot here.
+
+## 🔬 Technical Concepts
+
+### Transfer Learning
+
+The project uses pretrained object detection models rather than training an object detector completely from scratch. This allows the system to leverage features learned from large-scale datasets.
+
+### Label Map
+
+A TensorFlow label map associates object classes with numerical IDs. These IDs are used during inference to convert model predictions into recognizable object labels.
+
+### Inference Graph
+
+The inference graph represents the trained detection model used during prediction. It contains the operations required to process an input and produce object classes, confidence scores, and bounding boxes.
+
+### Protocol Buffers
+
+TensorFlow Object Detection models use serialized configuration and model information that can be represented using Protocol Buffers (`.proto` / `.pb`).
+
+## ⚙️ Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/Real-Time-Object-Detection-API-using-TensorFlow.git
+cd Real-Time-Object-Detection-API-using-TensorFlow
+```
+
+### 2. Install dependencies
+
+```bash
+pip install tensorflow opencv-python keras jupyter
+```
+
+### 3. TensorFlow Object Detection API
+
+Install and configure the TensorFlow Object Detection API according to the TensorFlow Models documentation.
+
+### 4. Run the notebooks
+
+Open Jupyter Notebook:
+
+```bash
+jupyter notebook
+```
+
+Run the appropriate notebook for:
+
+* Image detection
+* Video detection
+* Webcam detection
+* SSD inference
+* Faster R-CNN inference
+
+## 📱 Smartphone Camera
+
+A smartphone camera can also be used as a video source with a compatible IP-camera application.
+
+Start the camera server on the smartphone, obtain its local IP address, and configure the corresponding notebook to use that stream as the input source.
+
+## 📊 Detection Pipeline
+
+```text
+Image / Video / Webcam
+          ↓
+       OpenCV
+          ↓
+   Preprocessing
+          ↓
+ ┌─────────────────┐
+ │ SSD / Faster    │
+ │     R-CNN       │
+ └─────────────────┘
+          ↓
+ Object Predictions
+          ↓
+Bounding Boxes + Labels
+          ↓
+     Visualization
+```
+
+## 🎯 Project Objective
+
+The objective of this project is to demonstrate how **pretrained deep learning models and transfer learning** can be applied to build an object detection system capable of processing different visual input sources in real time.
+
+## 📌 Future Improvements
+
+* Add a REST API using **FastAPI**
+* Add a web-based detection interface
+* Support additional detection models such as YOLO
+* Add configurable confidence thresholds
+* Add object tracking
+* Add FPS and inference-time monitoring
+* Containerize the application using Docker
+
+## ⭐ Support
+
+If you find this project useful, consider giving the repository a **⭐ Star** and sharing your feedback.
+
+## 📄 License
+
+Add the appropriate license for your implementation and verify the license of any pretrained models, datasets, or source code used in this project.
